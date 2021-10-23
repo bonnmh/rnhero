@@ -37,11 +37,11 @@ if (isIos) {
 export const MyApp = () => {
   return (
     <SafeAreaProvider>
-      <Suspense fallback={null}>
-        <I18nextProvider i18n={i18n}>
-         <AppContainer/>
-        </I18nextProvider>
-      </Suspense>
+      <I18nextProvider i18n={i18n}>
+        <Suspense fallback={null}>
+          <AppContainer />
+        </Suspense>
+      </I18nextProvider>
     </SafeAreaProvider>
   );
 };
