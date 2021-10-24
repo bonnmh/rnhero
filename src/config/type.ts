@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-shadow */
-import {Theme} from '@react-navigation/native';
-import {RegisterOptions} from 'react-hook-form';
+import { Theme } from '@react-navigation/native';
+import { RegisterOptions } from 'react-hook-form';
 export interface ResponseBase<T = any> {
   code: number;
 
@@ -107,12 +107,15 @@ export interface Spacing {
   smaller: number;
   small: number;
   medium: number;
-  mediumPlush: number;
+  page: number;
   large: number;
   huge: number;
   massive: number;
 }
-export type AppTheme = Theme & {colors: Partial<Colors>};
+export type AppTheme = Theme & {
+  colors: Partial<Colors>,
+  spacing: Partial<Spacing>
+};
 
 export type HookFormRules = Exclude<
   RegisterOptions,
