@@ -113,8 +113,7 @@ export interface Spacing {
   massive: number;
 }
 export type AppTheme = Theme & {
-  colors: Partial<Colors>,
-  spacing: Partial<Spacing>
+  colors: Partial<Colors>
 };
 
 export type HookFormRules = Exclude<

@@ -2,7 +2,7 @@ import React, { memo, useRef, useState } from 'react';
 import { FlatList, Animated } from 'react-native';
 import isEqual from 'react-fast-compare';
 
-import { Block, Button, Screen, Text } from '@components';
+import { Block, Button, Icon, Img, Screen, Text } from '@components';
 import { AppTheme } from '@config/type';
 import { useTheme } from '@react-navigation/native';
 import { images, ImageTypes } from '@assets/image';
@@ -10,6 +10,9 @@ import { OnboardingItem, Paginator } from './Components';
 import { scale } from '@common';
 import { textPresets } from '@library/components/Text/Text.presets';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { navigate } from '@navigation/navigationService';
+import { APP_SCREEN } from '@navigation/screenTypes';
+import { spacing } from '@theme/spacing';
 
 export type SLIDE_TYPE = {
     id: String;
@@ -40,7 +43,6 @@ const LandingComponent = () => {
     }).current;
     const _onViewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
 
-    const { spacing }: AppTheme = useTheme();
     const insets = useSafeAreaInsets();
 
     // render
@@ -76,7 +78,7 @@ const LandingComponent = () => {
                                 if (currentIndex < SLIDES.length - 1) {
                                     slideRef.current?.scrollToIndex({ index: currentIndex + 1 })
                                 } else {
-
+                                    navigate(APP_SCREEN.HOME)
                                 }
                             }}
                             style={{
@@ -87,10 +89,10 @@ const LandingComponent = () => {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}>
-                            <Text
-                                style={{
-                                    color: 'white'
-                                }} >{`▀█▀`}</Text>
+                            <Icon
+                                size={scale(16)}
+                                color={'white'}
+                                icon={'right'} />
 
                         </Button>
                     </Block>

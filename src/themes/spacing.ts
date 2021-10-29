@@ -1,7 +1,7 @@
 import { moderateScale } from "@common";
 import { Spacing } from "@config/type";
 
-export const SpacingDefault: Spacing = {
+export const spacing: Spacing = {
     none: moderateScale(0),
     tiny: moderateScale(4),
     smaller: moderateScale(8),

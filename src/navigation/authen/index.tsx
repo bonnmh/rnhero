@@ -1,8 +1,8 @@
 import React from 'react';
-import { Home } from '@features/authentication/home';
 import { APP_SCREEN } from '@navigation/screenTypes';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Landing } from '@features/landing';
+import { Home } from '@features/home';
 
 const Main = createStackNavigator();
 

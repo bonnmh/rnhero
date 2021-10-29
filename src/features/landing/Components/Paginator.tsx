@@ -1,7 +1,7 @@
 import { Block } from '@components';
 import { AppTheme } from '@config/type';
 import { useTheme } from '@react-navigation/native';
-import { SpacingDefault } from '@theme/spacing';
+import { spacing } from '@theme/spacing';
 import React from 'react';
 import { Animated, useWindowDimensions } from 'react-native';
 import { SLIDE_TYPE } from '..';
@@ -11,7 +11,6 @@ const SIZE_ICON = 40;
 const Paginator = ({ data, scrollX }: { data: SLIDE_TYPE[], scrollX: any }) => {
 
     const { width: windowW } = useWindowDimensions();
-    const { spacing }: AppTheme = useTheme();
 
     return (
         <Block

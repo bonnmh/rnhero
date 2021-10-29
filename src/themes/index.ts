@@ -1,18 +1,15 @@
 import { AppTheme } from '@config/type';
 
 import { ColorDefault, ColorDark } from './color';
-import { SpacingDefault } from './spacing';
 
 const Default: AppTheme = {
   dark: false,
-  colors: ColorDefault,
-  spacing: SpacingDefault
+  colors: ColorDefault
 };
 
 const Dark: AppTheme = {
   dark: true,
-  colors: ColorDark,
-  spacing: SpacingDefault
+  colors: ColorDark
 };
 
 export const MyAppTheme = {

@@ -1,6 +1,6 @@
-import {FontSizeDefault} from '@theme/fontSize';
-import {FontDefault} from '@theme/typography';
-import {StyleSheet} from 'react-native';
+import { FontSizeDefault } from '@theme/fontSize';
+import { FontDefault } from '@theme/typography';
+import { StyleSheet } from 'react-native';
 export const textPresets = StyleSheet.create({
   linkTitle: {
     fontFamily: FontDefault.primary,
@@ -28,7 +28,7 @@ export const textPresets = StyleSheet.create({
     fontSize: FontSizeDefault.FONT_16,
     lineHeight: 30,
     fontWeight: '600',
-    color: '#000000',
+    color: '#000000'
   },
   linkSmall: {
     fontFamily: FontDefault.primary,
