@@ -37,3 +37,4 @@ export * from './Skeleton/Skeleton';
 export * from './ParsedText/ParsedText';
 export * from './CommentLoading/CommentLoading';
 export * from './Portal';
+export * from './SectionList/TabSectionList';
