@@ -1,12 +1,11 @@
-import { isIos } from '@common';
+import {isIos} from '@common';
 import i18n from '@library/utils/i18n/i18n';
-import { AppContainer } from '@navigation/AppNavigation';
-import { translate } from '@utils';
-import React, { Suspense } from 'react';
-import { I18nextProvider } from 'react-i18next';
-import { Text, UIManager, View } from 'react-native';
+import {AppContainer} from '@navigation/AppNavigation';
+import React, {Suspense} from 'react';
+import {I18nextProvider} from 'react-i18next';
+import {UIManager} from 'react-native';
 import KeyboardManager from 'react-native-keyboard-manager';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 if (!isIos) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -31,7 +30,8 @@ if (isIos) {
   KeyboardManager.setShouldPlayInputClicks(true);
   KeyboardManager.resignFirstResponder();
   KeyboardManager.reloadLayoutIfNeeded();
-  KeyboardManager.isKeyboardShowing().then((isShowing) => { });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  KeyboardManager.isKeyboardShowing().then(isShowing => {});
 }
 
 export const MyApp = () => {
