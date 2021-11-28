@@ -80,6 +80,19 @@ export const textPresets = StyleSheet.create({
     color: '#000000',
   },
   default: {},
+
+  textTET: {
+    fontFamily: FontDefault.viaoda,
+    fontSize: FontSizeDefault.FONT_20,
+    fontWeight: 'normal',
+    color: '#000000',
+  },
+  textTET1: {
+    fontFamily: FontDefault.ruthie,
+    fontSize: FontSizeDefault.FONT_14,
+    fontWeight: 'normal',
+    color: '#000000',
+  },
 });
 
 export type TextPresetNames = keyof typeof textPresets;
