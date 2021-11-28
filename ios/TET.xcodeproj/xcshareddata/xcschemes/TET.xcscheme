@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "rnhero.app"
-               BlueprintName = "rnhero"
-               ReferencedContainer = "container:rnhero.xcodeproj">
+               BuildableName = "TET.app"
+               BlueprintName = "TET"
+               ReferencedContainer = "container:TET.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "rnheroTests.xctest"
-               BlueprintName = "rnheroTests"
-               ReferencedContainer = "container:rnhero.xcodeproj">
+               BuildableName = "TETTests.xctest"
+               BlueprintName = "TETTests"
+               ReferencedContainer = "container:TET.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rnhero.app"
-            BlueprintName = "rnhero"
-            ReferencedContainer = "container:rnhero.xcodeproj">
+            BuildableName = "TET.app"
+            BlueprintName = "TET"
+            ReferencedContainer = "container:TET.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rnhero.app"
-            BlueprintName = "rnhero"
-            ReferencedContainer = "container:rnhero.xcodeproj">
+            BuildableName = "TET.app"
+            BlueprintName = "TET"
+            ReferencedContainer = "container:TET.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

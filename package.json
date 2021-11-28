@@ -1,5 +1,5 @@
 {
-  "name": "rnhero",
+  "name": "TET",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -21,6 +21,8 @@
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.22.0",
     "i18next": "^20.4.0",
+    "lottie-ios": "3.2.3",
+    "lottie-react-native": "^5.0.1",
     "moment": "^2.29.1",
     "react": "17.0.2",
     "react-fast-compare": "^3.2.0",
@@ -28,6 +30,7 @@
     "react-i18next": "^11.11.4",
     "react-native": "0.66.0",
     "react-native-blurhash": "^1.1.5",
+    "react-native-countdown-circle-timer": "^2.5.4",
     "react-native-fast-image": "^8.5.11",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-keyboard-manager": "^6.5.4-3",

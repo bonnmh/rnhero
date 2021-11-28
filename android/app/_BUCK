@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.rnhero",
+    package = "com.rnhero.tet",
 )
 
 android_resource(
     name = "res",
-    package = "com.rnhero",
+    package = "com.rnhero.tet",
     res = "src/main/res",
 )
 
