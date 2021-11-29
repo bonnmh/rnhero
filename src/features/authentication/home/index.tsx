@@ -54,17 +54,19 @@ const HomeComponent = () => {
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
 
-  console.log(moment().format());
   // render
   return (
-    <Screen statusBarStyle={'light-content'} statusColor={colors.red}>
+    <Screen
+      hiddenStatusBar
+      statusBarStyle={'light-content'}
+      statusColor={colors.red}>
       <Block
         block
         padding={24}
         alignItems={'center'}
         justifyContent={'center'}
         color={'white'}>
-        <Block position={'absolute'} top={0} left={0}>
+        <Block position={'absolute'} top={0} left={0} bottom={0}>
           <Wallpaper backgroundImage={'wall'} />
         </Block>
         <Block zIndex={2} position={'absolute'} top={100} left={24} right={0}>
