@@ -1,11 +1,12 @@
 import {isIos} from '@common';
 import i18n from '@library/utils/i18n/i18n';
 import {AppContainer} from '@navigation/AppNavigation';
-import React, {Suspense} from 'react';
+import React, {Suspense, useEffect} from 'react';
 import {I18nextProvider} from 'react-i18next';
 import {UIManager} from 'react-native';
 import KeyboardManager from 'react-native-keyboard-manager';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import TrackPlayer from 'react-native-track-player';
 
 if (!isIos) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -35,6 +36,12 @@ if (isIos) {
 }
 
 export const MyApp = () => {
+  useEffect(() => {
+    (async () => {
+      await TrackPlayer.setupPlayer({});
+    })();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <I18nextProvider i18n={i18n}>
