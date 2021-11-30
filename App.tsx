@@ -9,6 +9,7 @@ import RNBootSplash from 'react-native-bootsplash';
 import {isIos} from '@common';
 import i18n from '@library/utils/i18n/i18n';
 import {AppContainer} from '@navigation/AppNavigation';
+import CodePush from 'react-native-code-push';
 
 if (!isIos) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -37,7 +38,7 @@ if (isIos) {
   KeyboardManager.isKeyboardShowing().then(isShowing => {});
 }
 
-export const MyApp = () => {
+const _App = () => {
   useEffect(() => {
     const init = async () => {
       await TrackPlayer.setupPlayer({});
@@ -59,3 +60,7 @@ export const MyApp = () => {
     </SafeAreaProvider>
   );
 };
+
+const App = __DEV__ ? _App : CodePush(_App);
+
+export default App;

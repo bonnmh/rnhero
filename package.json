@@ -13,7 +13,8 @@
     "installPod": "func() { npm run installLib \"$1\" && npm run pod; }; func",
     "yp": "npm run installPod -- ",
     "android-apk": "yarn bundle-js-android && cd android && ./gradlew assembleRelease",
-    "bundle-js-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle"
+    "bundle-js-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle",
+    "push-android": "appcenter codepush release-react -a bonnmh/TET -d Staging"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
@@ -21,6 +22,9 @@
     "@react-navigation/native": "^6.0.4",
     "@react-navigation/stack": "^6.0.9",
     "@reduxjs/toolkit": "^1.6.1",
+    "appcenter": "4.3.0",
+    "appcenter-analytics": "4.3.0",
+    "appcenter-crashes": "4.3.0",
     "axios": "^0.22.0",
     "i18next": "^20.4.0",
     "lottie-ios": "3.2.3",
@@ -34,6 +38,7 @@
     "react-native-animated-numbers": "^0.2.0",
     "react-native-blurhash": "^1.1.5",
     "react-native-bootsplash": "^4.0.2",
+    "react-native-code-push": "^7.0.1",
     "react-native-countdown-circle-timer": "^2.5.4",
     "react-native-fast-image": "^8.5.11",
     "react-native-gesture-handler": "^1.10.3",
