@@ -1,6 +1,8 @@
 package com.rnhero.tet;
 
 import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactActivityDelegate; 
+import com.zoontek.rnbootsplash.RNBootSplash; 
 
 import android.os.Bundle;
 
@@ -19,5 +21,17 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(null);
+  }
+
+  @Override
+  protected ReactActivityDelegate createReactActivityDelegate() {
+    return new ReactActivityDelegate(this, getMainComponentName()) {
+
+      @Override
+      protected void loadApp(String appKey) {
+        RNBootSplash.init(MainActivity.this); 
+        super.loadApp(appKey);
+      }
+    };
   }
 }

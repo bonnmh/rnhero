@@ -1,12 +1,14 @@
-import {isIos} from '@common';
-import i18n from '@library/utils/i18n/i18n';
-import {AppContainer} from '@navigation/AppNavigation';
 import React, {Suspense, useEffect} from 'react';
 import {I18nextProvider} from 'react-i18next';
 import {UIManager} from 'react-native';
 import KeyboardManager from 'react-native-keyboard-manager';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import TrackPlayer from 'react-native-track-player';
+import RNBootSplash from 'react-native-bootsplash';
+
+import {isIos} from '@common';
+import i18n from '@library/utils/i18n/i18n';
+import {AppContainer} from '@navigation/AppNavigation';
 
 if (!isIos) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -37,9 +39,14 @@ if (isIos) {
 
 export const MyApp = () => {
   useEffect(() => {
-    (async () => {
+    const init = async () => {
       await TrackPlayer.setupPlayer({});
-    })();
+    };
+
+    init().finally(async () => {
+      await RNBootSplash.hide({fade: true});
+      console.log('Bootsplash has been hidden successfully');
+    });
   }, []);
 
   return (
