@@ -44,9 +44,13 @@ const _App = () => {
       await TrackPlayer.setupPlayer({});
     };
 
-    init().finally(async () => {
-      await RNBootSplash.hide({fade: true});
-      console.log('Bootsplash has been hidden successfully');
+    init().finally(() => {
+      setTimeout(() => {
+        (async () => {
+          await RNBootSplash.hide({fade: true});
+          console.log('Bootsplash has been hidden successfully');
+        })();
+      }, 2000);
     });
   }, []);
 
@@ -61,6 +65,11 @@ const _App = () => {
   );
 };
 
-const App = __DEV__ ? _App : CodePush(_App);
+const App = __DEV__
+  ? _App
+  : CodePush({
+      updateDialog: true,
+      installMode: CodePush.InstallMode.IMMEDIATE,
+    })(_App);
 
 export default App;

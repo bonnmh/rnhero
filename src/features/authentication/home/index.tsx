@@ -58,7 +58,7 @@ const daySeconds = 86400;
 const timerProps = {
   isPlaying: true,
   size: (width - 24 * 5) / 4,
-  strokeWidth: 2,
+  strokeWidth: 3,
   trailColor: '#D5C5B2',
 };
 
@@ -115,7 +115,7 @@ const HomeComponent = () => {
       await TrackPlayer.play();
     })();
     return () => {
-      TrackPlayer.remove(tracks);
+      TrackPlayer.stop();
     };
   }, []);
 
@@ -133,7 +133,6 @@ const HomeComponent = () => {
         onFinish={() => {
           try {
             setTimeout(() => {
-              console.log("__")
               setChucTet(CHUC_TET[Math.floor(Math.random() * 8) || 0]);
             }, 3000);
           } catch (error) {}
@@ -172,57 +171,65 @@ const HomeComponent = () => {
           />
         </Block>
 
-        <Block
-          position={'absolute'}
-          bottom={24}
-          right={24}
-          left={24}
-          direction={'row'}
-          width={'100%'}
-          justifyContent={'space-between'}>
-          <CountdownCircleTimer
-            {...timerProps}
-            colors={[['#7E2E84']]}
-            duration={daysDuration}
-            initialRemainingTime={remainingTime}>
-            {({elapsedTime}) =>
-              renderTime('Ngày', getTimeDays(daysDuration - elapsedTime))
-            }
-          </CountdownCircleTimer>
-          <CountdownCircleTimer
-            {...timerProps}
-            colors={[['#D14081']]}
-            duration={daySeconds}
-            initialRemainingTime={remainingTime % daySeconds}
-            onComplete={totalElapsedTime => [
-              remainingTime - totalElapsedTime > hourSeconds,
-            ]}>
-            {({elapsedTime}) =>
-              renderTime('Giờ', getTimeHours(daySeconds - elapsedTime))
-            }
-          </CountdownCircleTimer>
-          <CountdownCircleTimer
-            {...timerProps}
-            colors={[['#EF798A']]}
-            duration={hourSeconds}
-            initialRemainingTime={remainingTime % hourSeconds}
-            onComplete={totalElapsedTime => [
-              remainingTime - totalElapsedTime > minuteSeconds,
-            ]}>
-            {({elapsedTime}) =>
-              renderTime('Phút', getTimeMinutes(hourSeconds - elapsedTime))
-            }
-          </CountdownCircleTimer>
-          <CountdownCircleTimer
-            {...timerProps}
-            colors={[['#218380']]}
-            duration={minuteSeconds}
-            initialRemainingTime={remainingTime % minuteSeconds}
-            onComplete={totalElapsedTime => [
-              remainingTime - totalElapsedTime > 0,
-            ]}>
-            {({elapsedTime}) => renderTime('Giây', getTimeSeconds(elapsedTime))}
-          </CountdownCircleTimer>
+        <Block position={'absolute'} bottom={24} right={24} left={24}>
+          <Block
+            marginBottom={24}
+            direction={'row'}
+            width={'100%'}
+            justifyContent={'space-between'}>
+            <CountdownCircleTimer
+              {...timerProps}
+              colors={[['#7E2E84']]}
+              duration={daysDuration}
+              initialRemainingTime={remainingTime}>
+              {({elapsedTime}) =>
+                renderTime('Ngày', getTimeDays(daysDuration - elapsedTime))
+              }
+            </CountdownCircleTimer>
+            <CountdownCircleTimer
+              {...timerProps}
+              colors={[['#D14081']]}
+              duration={daySeconds}
+              initialRemainingTime={remainingTime % daySeconds}
+              onComplete={totalElapsedTime => [
+                remainingTime - totalElapsedTime > hourSeconds,
+              ]}>
+              {({elapsedTime}) =>
+                renderTime('Giờ', getTimeHours(daySeconds - elapsedTime))
+              }
+            </CountdownCircleTimer>
+            <CountdownCircleTimer
+              {...timerProps}
+              colors={[['#EF798A']]}
+              duration={hourSeconds}
+              initialRemainingTime={remainingTime % hourSeconds}
+              onComplete={totalElapsedTime => [
+                remainingTime - totalElapsedTime > minuteSeconds,
+              ]}>
+              {({elapsedTime}) =>
+                renderTime('Phút', getTimeMinutes(hourSeconds - elapsedTime))
+              }
+            </CountdownCircleTimer>
+            <CountdownCircleTimer
+              {...timerProps}
+              colors={[['#218380']]}
+              duration={minuteSeconds}
+              initialRemainingTime={remainingTime % minuteSeconds}
+              onComplete={totalElapsedTime => [
+                remainingTime - totalElapsedTime > 0,
+              ]}>
+              {({elapsedTime}) =>
+                renderTime('Giây', getTimeSeconds(elapsedTime))
+              }
+            </CountdownCircleTimer>
+          </Block>
+          <AnimatedLottieView
+            source={lottiesComponents.happy_new_year}
+            autoPlay
+            loop
+            duration={5000}
+            style={{width: '100%'}}
+          />
         </Block>
       </Block>
     </Screen>
