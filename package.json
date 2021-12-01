@@ -14,11 +14,15 @@
     "yp": "npm run installPod -- ",
     "android-apk": "yarn bundle-js-android && cd android && ./gradlew assembleRelease",
     "bundle-js-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle",
-    "push-android": "appcenter codepush release-react -a bonnmh/TET -d Staging"
+    "push-android": "appcenter codepush release-react -a bonnmh/TET -d Staging",
+    "android-sh1": "cd android && ./gradlew signingReport"
   },
   "dependencies": {
+    "@notifee/react-native": "^4.0.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/netinfo": "^6.0.2",
+    "@react-native-firebase/app": "^13.0.1",
+    "@react-native-firebase/messaging": "^13.0.1",
     "@react-navigation/native": "^6.0.4",
     "@react-navigation/stack": "^6.0.9",
     "@reduxjs/toolkit": "^1.6.1",
@@ -44,6 +48,7 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-keyboard-manager": "^6.5.4-3",
     "react-native-linear-gradient": "^2.5.6",
+    "react-native-permissions": "^3.1.0",
     "react-native-reanimated": "^2.3.0-beta.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",

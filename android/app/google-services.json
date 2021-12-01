@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "403126389584",
+    "project_id": "tet2022-36aaa",
+    "storage_bucket": "tet2022-36aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403126389584:android:2ef11ae565128606cf3a55",
+        "android_client_info": {
+          "package_name": "com.rnhero.tet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403126389584-853opjon0dpnr1gunf8385hj76e88q44.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rnhero.tet",
+            "certificate_hash": "08961b56d53b0fd704107998b03ffad3064cff32"
+          }
+        },
+        {
+          "client_id": "403126389584-fp5gri9sgcucqog1gshvfiqm7gctg6cc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY-b7aMHuEfK0TrEGtAnWGDgQtfNGjEVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403126389584-fp5gri9sgcucqog1gshvfiqm7gctg6cc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

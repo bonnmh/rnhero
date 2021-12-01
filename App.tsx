@@ -1,6 +1,6 @@
 import React, {Suspense, useEffect} from 'react';
 import {I18nextProvider} from 'react-i18next';
-import {UIManager} from 'react-native';
+import {Button, UIManager} from 'react-native';
 import KeyboardManager from 'react-native-keyboard-manager';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import TrackPlayer from 'react-native-track-player';
@@ -10,6 +10,7 @@ import {isIos} from '@common';
 import i18n from '@library/utils/i18n/i18n';
 import {AppContainer} from '@navigation/AppNavigation';
 import CodePush from 'react-native-code-push';
+import {useRegisterFCM} from '@config/firebase/Hooks';
 
 if (!isIos) {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -39,6 +40,8 @@ if (isIos) {
 }
 
 const _App = () => {
+  useRegisterFCM();
+
   useEffect(() => {
     const init = async () => {
       await TrackPlayer.setupPlayer({});

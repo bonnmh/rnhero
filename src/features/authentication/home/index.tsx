@@ -8,7 +8,7 @@ import {textPresets} from '@library/components/Text/Text.presets';
 import AnimatedLottieView from 'lottie-react-native';
 import {lottiesComponents} from '@assets/lotties';
 import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
-import {Dimensions, Pressable, View} from 'react-native';
+import {Dimensions, Button as ButtonNT, View} from 'react-native';
 import moment from 'moment';
 import {images} from '@assets/image';
 
