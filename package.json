@@ -14,7 +14,7 @@
     "yp": "npm run installPod -- ",
     "android-apk": "yarn bundle-js-android && cd android && ./gradlew assembleRelease",
     "bundle-js-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle",
-    "push-android": "appcenter codepush release-react -a bonnmh/TET -d Staging",
+    "push-android": "yarn bundle-js-android && appcenter codepush release-react -a bonnmh/TET -d Staging",
     "android-sh1": "cd android && ./gradlew signingReport"
   },
   "dependencies": {
