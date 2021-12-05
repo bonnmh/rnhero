@@ -55,6 +55,7 @@
     "react-native-svg": "^12.1.1",
     "react-native-text-gradient": "^0.1.7",
     "react-native-track-player": "^2.1.1",
+    "react-native-tts": "^4.1.0",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "redux-logger": "^3.0.6",

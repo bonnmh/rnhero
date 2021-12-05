@@ -7,6 +7,8 @@ export enum APP_SCREEN {
 
   AUTHORIZE = 'AUTHORIZE',
   HOME = 'HOME',
+
+  BLESSINGS = 'BLESSINGS'
 }
 
 export type UnAuthorizeParamsList = {

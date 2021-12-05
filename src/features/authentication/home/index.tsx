@@ -8,7 +8,7 @@ import {textPresets} from '@library/components/Text/Text.presets';
 import AnimatedLottieView from 'lottie-react-native';
 import {lottiesComponents} from '@assets/lotties';
 import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
-import {Dimensions, Button as ButtonNT, View} from 'react-native';
+import {Dimensions, Button as ButtonNT, Animated} from 'react-native';
 import moment from 'moment';
 import {images} from '@assets/image';
 
@@ -20,6 +20,8 @@ import TrackPlayer, {
 import {Mp3Component} from '@assets/mp3';
 import {LinearTextGradient} from 'react-native-text-gradient';
 import {FontDefault} from '@theme/typography';
+import {navigate} from '@navigation/navigationService';
+import {APP_SCREEN} from '@navigation/screenTypes';
 
 const {width} = Dimensions.get('window');
 
@@ -134,7 +136,7 @@ const HomeComponent = () => {
           try {
             setTimeout(() => {
               setChucTet(CHUC_TET[Math.floor(Math.random() * 8) || 0]);
-            }, 3000);
+            }, 2500);
           } catch (error) {}
         }}
       />
@@ -223,13 +225,19 @@ const HomeComponent = () => {
               }
             </CountdownCircleTimer>
           </Block>
-          <AnimatedLottieView
-            source={lottiesComponents.happy_new_year}
-            autoPlay
-            loop
-            duration={5000}
-            style={{width: '100%'}}
-          />
+
+          <Button
+            onPress={() => {
+              navigate(APP_SCREEN.BLESSINGS);
+            }}>
+            <AnimatedLottieView
+              source={lottiesComponents.happy_new_year}
+              autoPlay
+              loop
+              duration={5000}
+              style={{width: '100%'}}
+            />
+          </Button>
         </Block>
       </Block>
     </Screen>
